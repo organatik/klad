@@ -1,12 +1,10 @@
-import {Allow, IsBoolean, IsNotEmpty, MinLength, ValidateIf} from 'class-validator';
-import { ApiModelProperty, ApiModelPropertyOptional } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
+
+import { ApiModelProperty } from '@nestjs/swagger';
 
 export class RegisterDTO {
   @ApiModelProperty()
   username: string;
 
-  @Exclude()
   @ApiModelProperty()
   password: string;
 

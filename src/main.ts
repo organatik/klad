@@ -7,11 +7,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
   const options = new DocumentBuilder()
-  .setTitle('Snusik ECommerce')
+  .setTitle('Klad ECommerce')
   .setDescription('The Snusik API description')
   .setVersion('1.0')
-  .setBasePath('api')
-  .addTag('Snusik')
+  .setBasePath('api/3000')
+  .addTag('Klad')
   .addBearerAuth('Authorization', 'header')
   .build();
   const document = SwaggerModule.createDocument(app, options);

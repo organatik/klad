@@ -9,6 +9,5 @@ export class LoginDTO {
 
   @ApiModelProperty()
   @IsNotEmpty()
-  @Exclude()
   password: string;
 }

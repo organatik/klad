@@ -25,12 +25,12 @@ export class UserService {
 
     const createdUser = new this.userModel(userDto);
     createdUser.save();
-    return  createdUser;
+    return  createdUser.toObject();
   }
 
   async findByLogin(userDto: LoginDTO) {
     const { username, password } = userDto;
-    const user = await this.userModel.findOne({ username });
+    const user = await this.userModel.findOne({ username }).lean();
 
     if (!user) {
       throw new HttpException('Invalid credentionals', HttpStatus.UNAUTHORIZED);
@@ -49,6 +49,6 @@ export class UserService {
   }
 
   async findAll() {
-    return await this.userModel.find().exec();
+    return await this.userModel.find().select('-password').exec();
   }
 }
