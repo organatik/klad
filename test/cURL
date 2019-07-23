@@ -1,0 +1,12 @@
+POST http://localhost:3000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "organatik1112",
+    "password": "password",
+    "email": "organatik@gmail.com",
+    "telegram": "@organatik"
+}
+
+
+
